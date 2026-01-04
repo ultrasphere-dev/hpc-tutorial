@@ -1,0 +1,24 @@
+# Changes here will be overwritten by Copier
+_commit: d196313
+_src_path: gh:34j/pypackage-template
+add_me_as_contributor: false
+cli_name: hpc-tutorial
+copyright_year: '2025'
+documentation: true
+email: 34j.95a2p@simplelogin.com
+full_name: 34j
+github_app_installation_ids: ''
+github_username: ultrasphere-dev
+has_cli: true
+initial_commit: false
+is_django_package: false
+open_source_license: MIT
+open_with_editor: true
+package_name: hpc_tutorial
+project_name: hpc-tutorial
+project_short_description: Compare multiple distributed computation frameworks
+project_slug: hpc-tutorial
+run_uv_sync: false
+setup_github: false
+setup_pre_commit: false
+
