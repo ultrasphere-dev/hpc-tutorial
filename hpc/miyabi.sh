@@ -3,8 +3,8 @@
 #PBS -o out.log
 #PBS -j oe
 #PBS -m abe
-#PBS -V select=2:mpiprocs=1
-#PBS -l select=1
+#PBS -V
+#PBS -l select=2:mpiprocs=1
 #PBS -l walltime=03:00
 #PBS -l mail_power_info=true
 
