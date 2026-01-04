@@ -5,10 +5,4 @@
 #PBS -m abe
 #PBS -l select=1
 
-module load cuda nvidia
-cd ${PBS_O_WORKDIR}
-cd biem-helmholtz-sphere
-git pull
-uv sync --all-extras
-uv run biem-helmholtz-sphere jascome --backend=torch --device=cuda
-uv run biem-helmholtz-sphere jascome-bempp
+uv run python -m hpc_tutorial.tutorial_normal

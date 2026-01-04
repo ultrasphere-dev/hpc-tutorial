@@ -1,11 +1,14 @@
 import joblib
 import numpy as np
+from cm_time import timer
 from dask_mpi import initialize
 from distributed import Client
 
-initialize()
-client = Client()
-joblib.parallel_backend("dask")
+with timer() as t:
+    initialize()
+    client = Client()
+    joblib.parallel_backend("dask")
+print(f"Initialized Dask client in {t.elapsed:g}s")
 
 
 def _task(seed: int) -> float:
@@ -17,7 +20,9 @@ def _task(seed: int) -> float:
 
 
 if __name__ == "__main__":
-    results = joblib.Parallel(n_jobs=-1)(
-        joblib.delayed(_task)(seed) for seed in range(10)
-    )
-    print(results)
+    with timer() as t:
+        results = joblib.Parallel(n_jobs=-1)(
+            joblib.delayed(_task)(seed) for seed in range(10)
+        )
+        print(results)
+    print(f"Computed results in {t.elapsed:g}s")

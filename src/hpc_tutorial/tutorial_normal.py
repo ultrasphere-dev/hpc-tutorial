@@ -1,4 +1,5 @@
 import numpy as np
+from cm_time import timer
 
 
 def _task(seed: int) -> float:
@@ -10,4 +11,6 @@ def _task(seed: int) -> float:
 
 
 if __name__ == "__main__":
-    print(_task(0))
+    with timer() as t:
+        print(_task(0))
+    print(f"Computed result in {t.elapsed:g}s")
