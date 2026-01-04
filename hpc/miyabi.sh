@@ -12,4 +12,4 @@
 echo $UV_CACHE_DIR
 cd ${PBS_O_WORKDIR}
 uv run python -m hpc_tutorial.tutorial_normal
-uv run mpiexec python -m hpc_tutorial.tutorial_dask
+mpiexec uv run python -m hpc_tutorial.tutorial_dask
