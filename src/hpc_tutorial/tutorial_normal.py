@@ -4,8 +4,8 @@ from cm_time import timer
 
 def _task(seed: int) -> float:
     rng = np.random.default_rng(seed)
-    A = rng.normal(size=(10, 1000, 1000))
-    b = rng.normal(size=(10, 1000, 1))
+    A = rng.normal(size=(200, 1000, 1000))
+    b = rng.normal(size=(200, 1000, 1))
     x = np.linalg.solve(A, b)
     return x.mean()
 
