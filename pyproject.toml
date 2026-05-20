@@ -26,6 +26,10 @@ classifiers = [
 ]
 
 dependencies = [
+  "cm-time>=0.1.2",
+  "dask-mpi>=2025.10.0",
+  "joblib>=1.5.3",
+  "numpy>=2.2.6",
   "rich>=10",
   "typer>=0.15,<1",
 ]
