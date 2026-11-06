@@ -1,4 +1,4 @@
-from hpc_tutorial.main import add
+from hpc_tutorial._main import add  # noqa: PLC2701
 
 
 def test_add():
