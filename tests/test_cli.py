@@ -4,7 +4,7 @@ import sys
 
 def test_add_command():
     """The CLI adds two numbers."""
-    result = subprocess.run(  # noqa: S603
+    result = subprocess.run(
         [sys.executable, "-m", "hpc_tutorial", "1", "1"],
         check=True,
         capture_output=True,
