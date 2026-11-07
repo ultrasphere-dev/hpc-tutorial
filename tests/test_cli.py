@@ -1,12 +1,13 @@
-from typer.testing import CliRunner
-
-from hpc_tutorial.cli import app
-
-runner = CliRunner()
+import subprocess  # noqa: S404
+import sys
 
 
-def test_help():
-    """The help message includes the CLI name."""
-    result = runner.invoke(app, ["--help"])
-    assert result.exit_code == 0
-    assert "Add the arguments and print the result" in result.stdout
+def test_add_command():
+    """The CLI adds two numbers."""
+    result = subprocess.run(
+        [sys.executable, "-m", "hpc_tutorial", "1", "1"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert result.stdout.strip() == "2"

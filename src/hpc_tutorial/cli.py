@@ -1,12 +1,13 @@
-import typer
-from rich import print
+import sys
 
-from .main import add
+from cyclopts import App
 
-app = typer.Typer()
+from ._main import add
+
+app = App()
 
 
-@app.command()
+@app.default
 def main(n1: int, n2: int) -> None:
     """Add the arguments and print the result."""
-    print(add(n1, n2))
+    sys.stdout.write(f"{add(n1, n2)}\n")
